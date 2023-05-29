@@ -37,3 +37,54 @@ products
 
 ## Routes to interact with the resources
 *REST (REpresentational State Transfer - naming convention)
+
+B GET /users
+R GET /users/:id
+E POST /users/:id
+A POST /users
+<!-- D POST /users/:id/delete   (will not need for project)-->
+
+routes.md
+
+## MVP
+* Minimum Viable Product
+* What is the minimum feature that a user will find useful
+
+* Minimum Viable Demo (MVD)
+* What features can we effectively show off in 5 minutes
+* If you're not going to show it, don't build it
+* NO "WOULDN'T IT BE COOL IF?"
+
+
+## Wireframe/Mockup
+* Design the front end 
+* Anyone on the team can implement the design
+
+planning/wireframe.png
+
+## User Registration and Login
+** dont do it!!
+
+
+**JS
+
+//localhost:3000/login/7
+// do this instead
+app.get('/login/:id', (req, res) => {
+  // using encrypted cookies -set cookie
+  req.session.user_id = req.params.id;
+
+
+  // or using plain-text cookies - cookie parser - DECIDE WHICH WANT TO USE
+  res.cookie('user_id', req.params.id);
+
+  // send the user somewhere
+  res.redirect('/');
+});
+
+COPY AND PASTE INTO SERVER
+
+## Tech Choices
+
+* Back end - node, express, postgres
+* Front end - HTML, CSS, JS, jQueary
