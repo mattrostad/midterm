@@ -17,12 +17,18 @@
 - Books (To read)
 - Products (To buy)
 
-
 7) As Carter, I should be able to add an item to the list (POST)
 
 
-## Pick out the nouns
 
+-add to do list
+-show list of reminders
+
+Todo's (date), 
+categories: watch, eat, read, buy)
+ users
+
+## Pick out the nouns
 nouns === resources
 nouns are tables
 
@@ -34,6 +40,35 @@ products
 
 ## BUILD ERD
 
+
+User: name, email, 
+
+Users:-
+First Name
+Last Name
+Password
+Email
+ID - record ID -
+
+Category:
+category_name
+ID
+
+Tasks:
+category_id
+users_id
+ID: 
+task_name: 
+created_date:
+ scheduled_date: 
+ Completed_date: 
+  priority:
+
+ <!-- details_url:
+  is_active: -->
+
+
+- mess with Wolfram to determine criteria for API, can we prepopulate the categories, test out API
 
 ## Routes to interact with the resources
 *REST (REpresentational State Transfer - naming convention)
