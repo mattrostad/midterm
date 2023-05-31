@@ -1,21 +1,22 @@
-// Client facing scripts here
+// Client facing scripts here - JS Jquery -
 $(() => {
-  $('#fetch-users').on('click', () => {
-    let test = "rings"
-    const appID = "Y9X4HG-X95U8E2PJ6"
-    $.ajax({
-	async: true,
-	crossDomain: true,
-	url: `http://api.wolframalpha.com/v1/simple?appid=${appID}&i=What+airplanes+are+flying+overhead%3F`,
-	method: 'GET',
-})
-    .done((response) => {
-      // const $usersList = $('#users');
-      // $usersList.empty();
-console.log(response)
-      // for(const user of response.users) {
-      //   $(`<li class="user">`).text(user.name).appendTo($usersList);
-      // }
+  $("#fetch-users").on("click", () => {
+    const settings = {
+      async: true,
+      crossDomain: true,
+      url: "https://moviesdatabase.p.rapidapi.com/titles/search/title/titanic",
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": yelpAPI,
+        "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com",
+      },
+    };
+
+    const moviesResult = $.ajax(settings).done(function (response) {
+      console.log(response);
+      console.log(abc)
     });
+    $.when(moviesResult).done(function(movies){})
   });
 });
+

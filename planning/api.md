@@ -9,12 +9,12 @@ API Key
 
 ## RAPID API - MOVIES AND SHOWS
 
-node.js(axios)
+ mode: "cors",
 
-const settings = {
-	async: true,
-	crossDomain: true,
-	url: 'https://moviesdatabase.p.rapidapi.com/titles/series/%7BseriesId%7D',
+JS (fetch)
+
+const url = 'https://moviesdatabase.p.rapidapi.com/titles/series/%7BseriesId%7D';
+const options = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': '976181ede8msh8db849df77064aep11246cjsn64c186ae1e1a',
@@ -22,9 +22,15 @@ const settings = {
 	}
 };
 
-$.ajax(settings).done(function (response) {
-	console.log(response);
-});
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+}
+
+
 
 
 APP NAME: Matt Rostad
