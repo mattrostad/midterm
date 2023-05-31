@@ -62,25 +62,25 @@ const router  = express.Router();
 //    res.status(200).json({ message: 'Profile updated successfully' });
 //  });
 
-let todos = []
+// let todos = []
 
- router.get("/todos", function (req, res){
-  res.json(todos)
- });
+//  router.get("/todos", function (req, res){
+//   res.json(todos)
+//  });
 
- router.post("/todos", function (req,res){
-  if(!req.body.title){
-    res.status(400).json({error: 'Invalid request: todo title missing'})
-   return;
- }
+//  router.post("/todos", function (req,res){
+//   if(!req.body.title){
+//     res.status(400).json({error: 'Invalid request: todo title missing'})
+//    return;
+//  }
 
-const newTodo = {
-  title: req.body.title,
-  completed: req.body.completed || false
-};
+// const newTodo = {
+//   title: req.body.title,
+//   completed: req.body.completed || false
+// };
 
-todos.push(newTodo);
- console.log(todos)
-res.status(200).json({message: 'Todo added successdully', todo: newTodo});
-})
+// todos.push(newTodo);
+//  console.log(todos)
+// res.status(200).json({message: 'Todo added successdully', todo: newTodo});
+// })
 module.exports = router;
