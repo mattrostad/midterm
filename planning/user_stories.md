@@ -64,8 +64,7 @@ created_date:
  Completed_date: 
   priority:
 
- <!-- details_url:
-  is_active: -->
+
 
 
 - mess with Wolfram to determine criteria for API, can we prepopulate the categories, test out API
@@ -82,5 +81,3 @@ D POST /users/:id/delete
 routes.md
 
 ## 
-
-

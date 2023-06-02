@@ -9,7 +9,7 @@ API Key
 
 ## RAPID API - MOVIES AND SHOWS
 
- mode: "cors",
+mode: "cors",
 
 JS (fetch)
 
