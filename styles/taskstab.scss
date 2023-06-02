@@ -1,5 +1,5 @@
-/* The taskstab (background) */
-.taskstab {
+/* The modal (background) */
+.modal {
   display: none;
   position: fixed;
   z-index: 1031;
@@ -19,12 +19,12 @@
 
 }
 
-.taskstab-backdrop {
+.modal-backdrop {
   z-index: 0;
 }
 
-/* taskstab Content/Box */
-.taskstab-content {
+/* modal Content/Box */
+.modal-content {
   display: flex;
   background-color: #fefefe;
   top: 80px;
@@ -62,7 +62,7 @@ i.fas.fa-times.close {
   bottom: 32px;
   right: 32px;
   opacity: 1;
-  background: #F2BE22;
+  background: #17f913;
   border: none;
   border-radius: 100px;
   width: 85px;
