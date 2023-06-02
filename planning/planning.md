@@ -88,3 +88,15 @@ COPY AND PASTE INTO SERVER
 
 * Back end - node, express, postgres
 * Front end - HTML, CSS, JS, jQueary
+
+
+## TO DO ASAP
+
+
+1. Create a schema for categories
+2. Create a schema for todos
+3. Create seeds for categories
+4. Create seeds for todos
+5. create a route that returns json containing list of all todos
+6. create a route that can accept a submission and create a new todo
+7. APIs must be used to determine the most suitable category for the new smart todo, include a flag for the category 
