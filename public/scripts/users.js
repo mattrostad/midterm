@@ -1,7 +1,9 @@
 // Client facing scripts here - JS Jquery -
 $(() => {
-  $("#fetch-users").on("click", () => {
-    const searchTerm = $("#search").val();
+  $("#todo-form").on("submit", (event) => {
+    event.preventDefault()
+    const searchTerm = $("#title").val();
+    console.log(searchTerm)
 
 
     const settings = {
@@ -15,23 +17,30 @@ $(() => {
       },
     };
 
-    const moviesResult = $.ajax(settings).done(function (response) {
+    const moviesResult = $.ajax(settings).done(.ajax(function (response) {
       console.log(response);
     });
-    const settings1 = {
-      url: `https://api.yelp.com/v3/autocomplete?text=del&latitude=37.786882&longitude=-122.399972`,
-      method: "GET",
-      headers: {
-        "accept": "application/json",
-        "Access-Control-Allow-Origin": '*',
-        "Authorization": bearerKey,
-      },
-    };
 
-    $.ajax(settings1).done(function (response) {
-      console.log(response);
-    });
   });
 });
 
 
+
+
+    // const settings1 = {
+    //   url: `https://api.yelp.com/v3/autocomplete?text=del&latitude=37.786882&longitude=-122.399972`,
+    //   method: "GET",
+    //   headers: {
+    //     "accept": "application/json",
+    //     "Access-Control-Allow-Origin": '*',
+    //     "Authorization": bearerKey,
+    //   },
+    // };
+
+
+// NEED TWO MORE APIS - ONE FOR BOOKS AND ONE FOR PRODUCTS AND WE NEED TO CONNECT THEM ALL TO THE SUBMIT BUTTON AND HAVE IT CATEGORIZE
+
+
+    // $.ajax(settings1).done(function (response) {
+    //   console.log(response);
+    // });

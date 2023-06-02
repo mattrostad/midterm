@@ -96,7 +96,7 @@
       <script src="scripts/task_element.js"></script>
     </section>
 
-    <section>
+    <section class ="textinput">
       <button type="button" id="newTask" class="btn btn-primary close" data-toggle="modal" data-target="#mymodal">
         <i class="fas fa-plus fa-2x"></i>
       </button>
@@ -113,7 +113,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <form>
+              <form id="todo-form">
                 <div class="form-check">
                   <input type="checkbox" class="form-check-input" value="check-completed" id="checkbox"
                     name="completed">
@@ -151,7 +151,7 @@
                     <option>Low</option>
                   </select>
                 </div>
-                <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                <button type="submit" class="btn btn-lg btn-primary submit">Submit</button>
               </form>
             </div>
           </div>
@@ -181,7 +181,9 @@
   </script>
 
   <!-- modal -->
+  <script type="text/javascript" src="scripts/env.js"></script>
   <script type="text/javascript" src="scripts/modal.js"></script>
+  <script type="text/javascript" src="scripts/users.js"></script>
 </body>
 
 
