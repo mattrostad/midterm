@@ -16,7 +16,7 @@ let currentUser = {
 
 todoRoutes.get('/', (req, res) => {
   res.render('users');
-}); 
+});
 
 todoRoutes.post("/login", function (req, res) {
   if (!req.body.username || !req.body.password) {
@@ -58,7 +58,8 @@ todoRoutes.put("/profile", function (req, res) {
    // to update the user profile
    currentUser.username = req.body.username;
    currentUser.password = req.body.password;
- 
+
    res.status(200).json({ message: 'Profile updated successfully' });
  });
 module.exports = todoRoutes;
+
