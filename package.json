@@ -21,6 +21,7 @@
     "sass": "^1.62.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "jquery": "^3.7.0"
   }
 }
