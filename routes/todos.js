@@ -28,7 +28,8 @@ let todos = []
   res.json(todos)
  });
 
- router.post("/todos", function (req,res){
+ router.post("/", function (req,res){
+  console.log(req.body)
   if(!req.body.title){
     res.status(400).json({error: 'Invalid request: todo title missing'})
    return;

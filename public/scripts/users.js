@@ -43,7 +43,15 @@ const createTaskElement = (task) => {
       ? new Date(task.scheduled_date).toDateString()
       : "";
   }
+let title = task.title
+if(!title){
+title = task.titleText.text
+}
 
+if(!task.titleType){
+  task.titleType = {}
+  task.titleType.id = "movie"
+}
   // Using Bootstrap's gridding system
   const taskElm = `
     <article class="task ${task.completed_date ? "completed" : ""}">
@@ -54,7 +62,7 @@ const createTaskElement = (task) => {
           </div>
 
           <div class="col col-7">
-            <h3 class="task-name">${task.titleText.text}</h3>
+            <h3 class="task-name">${title}</h3>
             <span>${task.titleType.id}</span>
           </div>
           <div class="col col-3 task-icons">
@@ -90,8 +98,21 @@ const createTaskElement = (task) => {
   return taskElm;
 };
 
+
+
 // Client facing scripts here - JS Jquery -
 $(() => {
+  $.ajax({
+    url: "/todos",
+    method: "get",
+    success: (response)=>{
+      console.log("got todos", response)
+      renderTaskElms(response)
+    },
+    fail: (response)=> {
+      console.log("error: ", response)
+    }
+  })
   // const console = () => {
   //   console.log("hello")
   // }
@@ -117,12 +138,25 @@ $(() => {
         // Add close logic
         // $("#myModal").modal("hide"); // check
         //  $("#myModal").close();
-
-        if (movieArray.length > 0) {
-          movieArray.forEach((movie) => {
-            renderTaskElm(movie);
-          });
-        }
+          $.ajax({
+            url:"/todos",
+            method:"post",
+            data: {
+              title: response.results[0].titleText.text
+            },
+            success: (response)=>{
+              console.log("save todo")
+              location.href = "/" //redirect to home 
+            },
+            fail: (response)=> {
+              console.log("error: ", response)
+            }
+          })
+        // if (movieArray.length > 0) {
+        //   movieArray.forEach((movie) => {
+        //     renderTaskElm(movie);
+        //   });
+        // }
       })
       .catch((error) => {
         console.log(error);
