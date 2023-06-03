@@ -41,7 +41,6 @@
 
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="/">
-      <!-- logo image Not working -->
       <img src="img/5847.png" />
       <span>To Do</span>
     </a>
@@ -102,7 +101,7 @@
 
     </section>
 
-    <section>
+    <section class="textinput">
       <button type="button" id="newTask" class="btn btn-primary close" data-toggle="modal" data-target="#mymodal">
         <i class="fas fa-plus fa-2x"></i>
       </button>
@@ -119,7 +118,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <form>
+              <form id="todo-form">
                 <div class="form-check">
                   <input type="checkbox" class="form-check-input" value="check-completed" id="checkbox"
                     name="completed">
@@ -157,7 +156,7 @@
                     <option>Low</option>
                   </select>
                 </div>
-                <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                <button type="submit" class="btn btn-lg btn-primary submit">Submit</button>
               </form>
             </div>
           </div>
@@ -186,11 +185,8 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js">
   </script>
 
-  <!-- Date picker internal jquery -->
-  <script type="text/javascript" src="scripts/datepicker.js"></script>
-</body>
-
-
+  <!-- modal -->
+  <script type="text/javascript" src="scripts/modal.js"></script>
 </body>
 
 

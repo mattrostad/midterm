@@ -30,12 +30,16 @@ app.use(express.static('public'));
 // Note: Feel free to replace the example routes below with your own
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
+const todoRoutes = require('./routes/todos')
 const usersRoutes = require('./routes/users');
-
+// to create a new route
+// create a variable with a decriptive name and require that file with a
+// descriptive name eg todo routes
+// and when you import change name to the name of the file
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
-app.use('/api/users', userApiRoutes);
+app.use('/todos', todoRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 // Note: mount other resources here, using the same pattern above
@@ -51,3 +55,10 @@ app.use('/users', usersRoutes);
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
+// app.get("/todos", (req, res) => {
+// const newArray = ['June']
+//   console.log("hello")
+//   res.json(newArray)
+//  });
+
